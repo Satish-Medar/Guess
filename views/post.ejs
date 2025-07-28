@@ -3,36 +3,99 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <%-include("includes/nav.ejs") %>
-    <div class="container py-5">
-      <div class="row justify-content-center">
-        <div class="col-md-8 text-center">
-          <h1 class="display-4 mb-3 text-primary fw-bold">Welcome to the Game</h1>
-          <p class="lead mb-4">Experience a modern and exciting way to play and win!</p>
-          <p class="mb-4">Click the button below to start playing!</p>
-          <a href="https://guess-ghez.onrender.com/game/postgame" class="btn btn-lg btn-success mb-3 me-2">Start Game</a>
-          <a href="https://guess-ghez.onrender.com/game" class="btn btn-lg btn-outline-secondary mb-3">Go to Game</a>
-          <div class="card mt-5 shadow-sm">
-            <div class="card-body">
-              <h2 class="card-title mb-3 text-secondary">Game Instructions</h2>
-              <ul class="list-group list-group-flush mb-3">
-                <li class="list-group-item">Guess the number and win real money!</li>
-                <li class="list-group-item">Enter your name and username when posting your guess.</li>
-                <li class="list-group-item">Good luck!</li>
-              </ul>
-              <div class="d-flex align-items-center justify-content-between mt-4">
-                <div>
-                  <span class="fw-bold">Current Jackpot:</span>
-                  <span id="jackpot" class="badge bg-success text-light fs-5 ms-2">$500</span>
-                </div>
+    <div
+      class="container d-flex justify-content-center align-items-center vh-100"
+    >
+      <div class="card border-success mb-3 " style="max-width: 28rem">
+        <div class="card-header" id="card-header">Post Your Guess Number</div>
+        <div class="card-body text-success">
+          <h5 class="card-title">Wish You 👍"ALL THE BEST" 👍</h5>
+          <form class="row gy-2 gx-3 align-items-center" method="post" action="https://guess-ghez.onrender.com/game">
+            <div class="col-auto">
+              <label class="visually-hidden" for="autoSizingInput">Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="autoSizingInput"
+                placeholder="Name"
+                name="name"
+                required
+              />
+            </div>
+
+            <div class="col-auto">
+              <label class="visually-hidden" for="autoSizingInput">Number</label>
+              <input
+                type="number"
+                class="form-control"
+                id="autoSizingInput"
+                placeholder="Enter Number"
+                name="number"
+                required
+              />
+            </div>
+
+
+            <div class="col-auto">
+              <label class="visually-hidden" for="autoSizingInputGroup"
+                >Username</label
+              >
+              <div class="input-group">
+                <div class="input-group-text">@</div>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="autoSizingInputGroup"
+                  placeholder="Username"
+                  name="Username"
+                  required
+                />
               </div>
             </div>
-          </div>
+            <div class="col-auto">
+              <label class="visually-hidden" for="amountSelect"
+                >Preference</label
+              >
+              <select class="form-select" id="amountSelect" name="money" required>
+                <option value="" selected disabled>Choose...</option>
+                <option value="5">Five Rupees</option>
+                <option value="10">Ten Rupees</option>
+                <option value="50">Fifty Rupees</option>
+                <option value="100">Hundred Rupees</option>
+              </select>
+            </div>
+
+            <!-- <div class="col-auto"> -->
+              <!-- <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="autoSizingCheck" -->
+                <!-- /> -->
+                <!-- <label class="form-check-label" for="autoSizingCheck">
+        Remember me
+      </label> -->
+              <!-- </div> -->
+            <!-- </div> -->
+            <div class="col-auto">
+             <button type="submit" class="btn btn-primary">Submit</button>
+            
+            </div>
+          </form>
         </div>
       </div>
+    </div>
+
+
+
+    
+
+
     </div>
   </body>
 </html>
