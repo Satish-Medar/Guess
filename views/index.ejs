@@ -19,7 +19,10 @@
       </div>
 
       <div class="card-footer text-body-secondary" id="container">
-        <div>Number will be displayed in <span id="timer">10:00</span></div>
+        <div>
+          <strong id="duration-label">Select the duration to reveal the lucky number:</strong>
+          <span id="timer">00:00</span>
+        </div>
         <div class="timer-btns">
           <button
             id="0.1"
@@ -91,7 +94,7 @@
   <p class="card-header">ID: <%=person.id%></p>
   <div class="card-body">
     <h5 class="card-title">Username: @<i><%=person.Username%></i></h5>
-    <p class="card-text"><%= person.p%></p>
+    <p class="card-text">Guessed Number is : <%= person.p%></p>
     <p class="card-text"><%= person.mon%></p>
     <a href="/game/<%=person.id %>/edit">
      <button type="button" class="btn btn-secondary">Edit</button>
