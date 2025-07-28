@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit User's Profile</title>
+  </head>
+  <body>
+    <%-include("includes/nav.ejs") %>
+    <form method="post" action="/game/<%=person.id%>?_method=PATCH">
+      <div class="container d-flex flex-wrap">
+        <div class="d-flex">
+          <div class="card mt-5 me-5 mb-5">
+            <p class="card-header">ID: <%=person.id%></p>
+            <div class="card-body">
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">@</span>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Username"
+                  name="Username"
+                  aria-label="Username"
+                  aria-describedby="basic-addon1"
+                />
+              </div>
+
+              <p class="card-text"><%= person.p%></p>
+              <p class="card-text"><%= person.mon%></p>
+              <a href="/game">
+                <button type="button" class="btn btn-secondary">Back</button>
+              </a>
+                <button type="submit" class="btn btn-success">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

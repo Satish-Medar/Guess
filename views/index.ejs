@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%-include("includes/nav.ejs") %>
+   
+    <div class="card text-center">
+      <div class="card-header">
+        <h1 class="card-title">💸💸Guess and Win - Real Money 💸💸</h1>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title" id="number">Number is: XX</h5>
+        <p class="card-text"></p>
+        <a href="http://localhost:3000/game/postgame" class="btn btn-primary">Post Your Guess</a>
+      </div>
+
+      <div class="card-footer text-body-secondary" id="container">
+        <div>Number will be displayed in <span id="timer">10:00</span></div>
+        <div class="timer-btns">
+          <button
+            id="0.1"
+            type="button"
+            class="btn btn-outline-success timer-btns btn1 time_btns"
+            style="
+              --bs-btn-padding-y: 0.25rem;
+              --bs-btn-padding-x: 0.5rem;
+              --bs-btn-font-size: 0.85rem;
+            "
+          >
+            6 secs
+          </button>
+          <button
+            id="0.2"
+            type="button"
+            class="btn btn-outline-success btn2 time_btns"
+            style="
+              --bs-btn-padding-y: 0.25rem;
+              --bs-btn-padding-x: 0.5rem;
+              --bs-btn-font-size: 0.85rem;
+            "
+          >
+            12 secs
+          </button>
+          <button
+            id="0.4"
+            type="button"
+            class="btn btn-outline-success btn3 time_btns"
+            style="
+              --bs-btn-padding-y: 0.25rem;
+              --bs-btn-padding-x: 0.5rem;
+              --bs-btn-font-size: 0.85rem;
+            "
+          >
+           24 secs
+          </button>
+          <button
+            id="0.8"
+            type="button"
+            class="btn btn-outline-success btn4 time_btns"
+            style="
+              --bs-btn-padding-y: 0.25rem;
+              --bs-btn-padding-x: 0.5rem;
+              --bs-btn-font-size: 0.85rem;
+              --bs-btn-margin-left: 0.95rem;
+            "
+          >
+            48 secs
+          </button>
+        </div>
+      </div>
+    </div>
+ <div class="container d-flex">
+
+    <div class="card mt-5 me-5" style="width: 12rem;">
+  <div class="card-body">
+    <h5 class="card-title">🏆All Players🏆</h5>
+  </div>
+</div>
+
+
+ </div>
+
+<div class="container d-flex flex-wrap">
+    <%for(let person of data ){%>
+<div class="d-flex">
+        <div class="card mt-5 me-5 mb-5">
+  <p class="card-header">ID: <%=person.id%></p>
+  <div class="card-body">
+    <h5 class="card-title">Username: @<i><%=person.Username%></i></h5>
+    <p class="card-text"><%= person.p%></p>
+    <p class="card-text"><%= person.mon%></p>
+    <a href="/game/<%=person.id %>/edit">
+     <button type="button" class="btn btn-secondary">Edit</button>
+    </a>
+
+    <form  method="post" action="/game/<%=person.id%>?_method=Delete">
+     <button type="submit" class="btn btn-danger delete">Delete</button>
+     </form>
+  </div>
+</div>
+</div>
+<%}%>
+</div>
+   
+    <script src="app.js"></script>
+  </body>
+</body>
+</html>
+
+    
