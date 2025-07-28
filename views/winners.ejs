@@ -13,13 +13,13 @@
     </div>
 
     <div class="container d-flex flex-wrap">
-      <%for(let person of data ){%>   <% if(person.p == winningNumber) { %>
+      <%for(let person of data ){%> <% if(person.p == winningNumber) { %>
       <div class="d-flex">
         <div class="card mt-5 me-5 mb-5">
           <p class="card-header">ID: <%=person.id%></p>
           <div class="card-body">
             <h5 class="card-title">Username: @<i><%=person.Username%></i></h5>
-            <p class="card-text"><%= person.p%></p>
+            <p class="card-text">Guessed Number is : <%= person.p%></p>
             <p class="card-text"><%= person.mon%></p>
           </div>
         </div>
