@@ -47,14 +47,17 @@ function timer(time_selected) {
 
     // Add leading zero to seconds if needed
     seconds = seconds < 10 ? "0" + seconds : seconds;
-
-    timerDisplay.textContent = `${minutes}:${seconds}`;
+    let strong = document.getElementById("duration-label");
+    strong.textContent = "";
+    timerDisplay.textContent = `Number will be displayed in ${minutes}:${seconds}`;
 
     timeLeft--;
 
     if (timeLeft < 0) {
       clearInterval(countdown);
-      timerDisplay.textContent = "10:00";
+
+      timerDisplay.innerHTML =
+        "<strong>Select the duration to reveal the lucky number:</strong> 00:00";
     }
   }, 1000);
 
