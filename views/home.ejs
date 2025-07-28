@@ -6,7 +6,33 @@
     <title>Home</title>
   </head>
   <body>
-    <h1>Welcome to the Game</h1>
-    <a href="/game">Go to Game</a>
+    <%-include("includes/nav.ejs") %>
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+          <h1 class="display-4 mb-3 text-primary fw-bold">Welcome to the Game</h1>
+          <p class="lead mb-4">Experience a modern and exciting way to play and win!</p>
+          <p class="mb-4">Click the button below to start playing!</p>
+          <a href="https://guess-ghez.onrender.com/game/postgame" class="btn btn-lg btn-success mb-3 me-2">Start Game</a>
+          <a href="https://guess-ghez.onrender.com/game" class="btn btn-lg btn-outline-secondary mb-3">Go to Game</a>
+          <div class="card mt-5 shadow-sm">
+            <div class="card-body">
+              <h2 class="card-title mb-3 text-secondary">Game Instructions</h2>
+              <ul class="list-group list-group-flush mb-3">
+                <li class="list-group-item">Guess the number and win real money!</li>
+                <li class="list-group-item">Enter your name and username when posting your guess.</li>
+                <li class="list-group-item">Good luck!</li>
+              </ul>
+              <div class="d-flex align-items-center justify-content-between mt-4">
+                <div>
+                  <span class="fw-bold">Current Jackpot:</span>
+                  <span id="jackpot" class="badge bg-success text-light fs-5 ms-2">$500</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
