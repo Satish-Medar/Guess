@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        main {
+            flex: 1;
+        }
+        footer {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            text-align: center;
+        }
+        footer p {
+            margin: 0;
+            color: #6c757d;
+        }
+        footer p span {
+            color: red;
+        }
+        footer p:last-child {
+            margin-top: 0.5rem;
+        }
+        footer p:last-child span {
+            font-size: 1.2rem;
+        }
+        footer p:last-child span::before {
+            content: "Made with ";
+            font-weight: bold;
+        }
+        footer p:last-child span::after {
+            content: " by Satish Medar";
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <main></main>
+    <footer>
+        <p>&copy; 2025. All rights reserved.</p>
+        <p><span style="color: red;">&#10084;&#65039;</span></p>
+    </footer>
+</body>
+</html>
