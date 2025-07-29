@@ -106,7 +106,7 @@ app.post("/game", (req, res) => {
   let id = uuidv4();
   let { name, number, Username, money } = req.body;
   let mon = `Rupees: ₹${money}`;
-  let p = `Guessed Number is : ${number}`;
+  let p = number;
   data.push({ id, number, Username, p, mon });
   console.log(mon);
   res.redirect("/game");
